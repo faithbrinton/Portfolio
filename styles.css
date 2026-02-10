@@ -359,19 +359,10 @@ body {
 }
 
 /* images*/
-.project-thumb-1 {
-    background-image: url("Images/converter.png");
-}
-.project-thumb-2 {
-    background-image: url("Images/hotel.png");
-}
-.project-thumb-3 {
-    background-image: url("Images/library.png");
-}
-.project-thumb-4 {
-    background-image: url("Images/painting.jpg");
-}
-
+.project-thumb-1 { background-image: url("./images/converter.png"); }
+.project-thumb-2 { background-image: url("./images/hotel.png"); }
+.project-thumb-3 { background-image: url("./images/library.png"); }
+.project-thumb-4 { background-image: url("./images/painting.jpg"); }
 
 .pill {
     position: absolute;

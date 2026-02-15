@@ -557,6 +557,10 @@ body {
     text-decoration: none;
 }
 
+.contact-extra a:hover {
+  text-decoration: underline;
+}
+
 /* ============================================================
    FOOTER
    ============================================================ */

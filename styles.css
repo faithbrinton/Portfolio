@@ -1,4 +1,8 @@
-/* Base reset-ish stuff */
+/* ============================================================
+   GLOBAL RESET + BASE
+   ============================================================ */
+
+/* Base reset stuff */
 *,
 *::before,
 *::after {
@@ -14,13 +18,25 @@ body {
     line-height: 1.6;
 }
 
-/* Layout */
+/* ============================================================
+   PAGE LAYOUT
+   ============================================================ */
+
 .page {
     display: flex;
     min-height: 100vh;
 }
 
-/* Sidebar / left panel */
+/* Main content */
+.content {
+    flex: 1;
+    padding: 40px 56px;
+}
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+
 .sidebar {
     width: 280px;
     padding: 32px 24px;
@@ -34,6 +50,7 @@ body {
     height: 100vh;
 }
 
+/* Logo */
 .logo-mark {
     display: inline-flex;
     align-items: center;
@@ -59,7 +76,23 @@ body {
     opacity: 0.7;
 }
 
-/* Nav */
+/* Sidebar footer */
+.sidebar-footer {
+    margin-top: 32px;
+}
+
+.small-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+    margin-bottom: 8px;
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+
 .nav {
     margin-top: 32px;
     display: flex;
@@ -77,6 +110,7 @@ body {
     transition: color 0.25s ease, border-color 0.25s ease;
 }
 
+/* Animated underline */
 .nav-link::after {
     content: "";
     position: absolute;
@@ -99,19 +133,10 @@ body {
     width: 100%;
 }
 
-.sidebar-footer {
-    margin-top: 32px;
-}
+/* ============================================================
+   BUTTONS + LINKS
+   ============================================================ */
 
-.small-label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    opacity: 0.7;
-    margin-bottom: 8px;
-}
-
-/* Buttons */
 .primary-btn,
 .ghost-btn {
     display: inline-flex;
@@ -133,6 +158,7 @@ body {
         border-color 0.25s ease;
 }
 
+/* Primary */
 .primary-btn {
     background: linear-gradient(135deg, #a855f7, #6366f1);
     color: #ffffff;
@@ -149,6 +175,7 @@ body {
     box-shadow: 0 6px 18px rgba(99,102,241,0.4);
 }
 
+/* Ghost */
 .ghost-btn {
     background: transparent;
     color: #e5e7eb;
@@ -160,18 +187,29 @@ body {
     border-color: #a855f7;
 }
 
+/* Sidebar button full-width */
 .sidebar-btn {
     width: 100%;
     margin-top: 8px;
 }
 
-/* Main content */
-.content {
-    flex: 1;
-    padding: 40px 56px;
+/* Inline “text link” style */
+.text-link {
+    font-size: 0.9rem;
+    color: #a5b4fc;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s ease, color 0.25s ease;
 }
 
-/* Sections */
+.text-link:hover {
+    border-color: #a5b4fc;
+}
+
+/* ============================================================
+   SECTIONS 
+   ============================================================ */
+
 .section {
     max-width: 1100px;
     margin: 0 auto 64px;
@@ -182,6 +220,7 @@ body {
     margin-bottom: 32px;
 }
 
+/* Subtle hover glow on specific sections */
 .section.work:hover,
 .section.contact:hover {
     background: radial-gradient(circle at top right, rgba(99,102,241,0.08), transparent 55%);
@@ -209,7 +248,17 @@ body {
     color: #9ca3af;
 }
 
-/* Hero */
+/* Accent gradient text */
+.accent {
+    background: linear-gradient(135deg, #a855f7, #6366f1);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
 .hero {
     display: grid;
     grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
@@ -222,12 +271,6 @@ body {
     font-size: clamp(2.4rem, 3.2vw, 3rem);
     line-height: 1.15;
     margin-bottom: 16px;
-}
-
-.accent {
-    background: linear-gradient(135deg, #a855f7, #6366f1);
-    -webkit-background-clip: text;
-    color: transparent;
 }
 
 .hero-subtitle {
@@ -308,19 +351,10 @@ body {
     margin-bottom: 12px;
 }
 
-.text-link {
-    font-size: 0.9rem;
-    color: #a5b4fc;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.25s ease, color 0.25s ease;
-}
+/* ============================================================
+   PROJECTS GRID + CARDS
+   ============================================================ */
 
-.text-link:hover {
-    border-color: #a5b4fc;
-}
-
-/* Projects grid */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -350,6 +384,7 @@ body {
         background 0.25s ease;
 }
 
+/* Top image area */
 .project-thumb {
     position: relative;
     height: 120px;
@@ -358,12 +393,13 @@ body {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* images*/
+/* images */
 .project-thumb-1 { background-image: url("./images/converter.png"); }
 .project-thumb-2 { background-image: url("./images/hotel.png"); }
 .project-thumb-3 { background-image: url("./images/library.png"); }
 .project-thumb-4 { background-image: url("./images/painting.jpg"); }
 
+/* Category pill on thumb */
 .pill {
     position: absolute;
     bottom: 10px;
@@ -376,6 +412,7 @@ body {
     border: 1px solid rgba(148,163,184,0.8);
 }
 
+/* Card content */
 .project-body {
     padding: 14px 16px 16px;
 }
@@ -409,13 +446,16 @@ body {
     filter: brightness(1.1);
 }
 
-/* About */
+/* ============================================================
+   ABOUT
+   ============================================================ */
+
 .about-layout {
     display: grid;
     grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.3fr);
     gap: 32px;
     margin-top: 10px;
-    align-items: start;  
+    align-items: start;
 }
 
 .about-text p + p {
@@ -443,7 +483,10 @@ body {
     color: #e5e7eb;
 }
 
-/* Contact */
+/* ============================================================
+   CONTACT
+   ============================================================ */
+
 .contact-form {
     margin-top: 16px;
     background: rgba(15,23,42,0.85);
@@ -514,7 +557,10 @@ body {
     text-decoration: none;
 }
 
-/* Footer */
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
 .footer {
     border-top: 1px solid rgba(31,41,55,0.9);
     padding-top: 16px;
@@ -524,11 +570,15 @@ body {
     margin-top: 24px;
 }
 
-/* Responsive */
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
 @media (max-width: 960px) {
     .page {
         flex-direction: column;
     }
+
     .sidebar {
         position: static;
         width: 100%;
@@ -537,15 +587,19 @@ body {
         align-items: center;
         gap: 16px;
     }
+
     .sidebar-footer {
         display: none; /* can keep or adapt for mobile */
     }
+
     .content {
         padding: 24px 18px 32px;
     }
+
     .hero {
         grid-template-columns: 1fr;
     }
+
     .about-layout {
         grid-template-columns: 1fr;
     }
@@ -556,6 +610,7 @@ body {
         flex-direction: column;
         align-items: flex-start;
     }
+
     .hero-actions {
         flex-direction: column;
         align-items: flex-start;

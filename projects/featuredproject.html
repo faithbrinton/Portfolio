@@ -1,0 +1,327 @@
+<!--
+Program: Portfolio - Reusable Project Page Template
+Programmer: Faith Cameron
+LMD: 2026-02-20
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project | Faith Brinton</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font (same as main site) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="../styles.css" />
+
+  <!-- Page-only styles to keep css clean, this file is a reuable template -->
+  <style>
+
+    /* Project page layout */
+    .project-shell {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .project-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: #e5e7eb;
+      border: 1px solid rgba(148,163,184,0.7);
+      background: rgba(2, 6, 23, 0.35);
+      transition: transform 0.12s ease, border-color 0.25s ease, background 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-1px);
+      border-color: #a855f7;
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .project-header {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      border-radius: 18px;
+      padding: 22px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 18px 40px rgba(15,23,42,0.55);
+    }
+
+    .project-title {
+      font-size: clamp(1.8rem, 2.4vw, 2.2rem);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .project-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #9ca3af;
+      margin-bottom: 10px;
+    }
+
+    .project-lead {
+      color: #d1d5db;
+      font-size: 0.95rem;
+      max-width: 820px;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .project-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      border-radius: 18px;
+      padding: 18px 18px;
+    }
+
+    .project-card h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .muted {
+      color: #9ca3af;
+    }
+
+    .project-list {
+      margin-top: 8px;
+      padding-left: 18px;
+      color: #d1d5db;
+      font-size: 0.9rem;
+    }
+
+    .project-list li + li {
+      margin-top: 6px;
+    }
+
+    .project-media {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.35);
+      background: radial-gradient(circle at top left, #1f2937 0, #020617 65%);
+      box-shadow: 0 18px 40px rgba(15,23,42,0.55);
+    }
+
+    .project-media img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .media-caption {
+      padding: 10px 12px;
+      font-size: 0.82rem;
+      color: #9ca3af;
+      border-top: 1px solid rgba(148,163,184,0.25);
+    }
+
+    .tags {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+      padding: 0;
+    }
+
+    .tags li {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      color: #e5e7eb;
+      font-size: 0.8rem;
+    }
+
+    .project-section {
+      margin-top: 20px;
+    }
+
+    .project-section .project-card + .project-card {
+      margin-top: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+      .project-topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <!-- Sidebar -->
+    <header class="sidebar">
+      <div class="logo">
+        <span class="logo-mark">FB</span>
+        <span class="logo-text">Faith Brinton</span>
+        <span class="logo-sub">Developer & Designer</span>
+      </div>
+
+      <nav class="nav">
+        <a href="../index.html#hero" class="nav-link">Home</a>
+        <a href="../index.html#work" class="nav-link">Work</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p class="small-label">&nbsp;&nbsp;Open to opportunities</p>
+        <a href="../Faith_Resume.pdf" class="primary-btn sidebar-btn" target="_blank" rel="noopener">
+          View my resume
+        </a>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="content">
+      <div class="project-shell">
+
+        <!-- Top bar -->
+        <div class="project-topbar">
+          <a class="back-btn" href="../index.html#work">← Back to Portfolio</a>
+          <p class="eyebrow">Project / 2026</p>
+        </div>
+
+        <!-- Header / summary -->
+        <section class="project-header">
+          <p class="project-kicker">Frontend Dev · Web</p>
+          <h1 class="project-title">
+            Metric–Imperial Converter Web App
+          </h1>
+          <p class="project-lead">
+            A responsive JavaScript web app that converts common metric 
+            values to imperial units with dropdown selection, input validation, and clean, readable output.
+          </p>
+
+          <ul class="tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Client-Side Logic</li>
+            <li>Responsive UI</li>
+          </ul>
+
+          <div class="project-actions">
+            <!-- Swap these links per project -->
+            <a class="primary-btn" href="#" target="_blank" rel="noopener">Live Demo</a>
+            <a class="ghost-btn" href="#" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </section>
+
+        <!-- Main grid: details + media -->
+        <section class="project-grid">
+          <!-- Left: details -->
+          <div>
+            <div class="project-card">
+              <h3>What I built</h3>
+              <p class="muted">
+               A client-side web application designed to convert common metric 
+               units into imperial values through a simple, user-friendly interface.
+              </p>
+
+              <ul class="project-list">
+                <li>Supports multiple conversions including temperature, distance, weight, and length</li>
+                <li>Features a responsive card-based layout with animated background styling</li>
+                <li>Displays formatted results dynamically based on user input</li>
+              </ul>
+            </div>
+
+            <div class="project-section">
+              <div class="project-card">
+                <h3>How it works</h3>
+                <p class="muted">
+                  The application uses JavaScript to capture user input, apply conversion formulas, and update the interface in real time.
+                </p>
+                <ul class="project-list">
+                  <li>Uses DOM manipulation and event listeners to handle form interactions.</li>
+                  <li>Applies conditional logic to execute different conversions from a dropdown selection</li>
+                  <li>Includes input validation and formatted output using Number() and toFixed()</li>
+                </ul>
+              </div>
+
+              <div class="project-card">
+                <h3>What I learned</h3>
+                <p class="muted">
+              This project strengthened my understanding of client-side development and reinforced best practices for building interactive web tools.
+              </p>
+                <ul class="project-list">
+                  <li>Gained hands-on experience with JavaScript program flow and DOM updates</li>
+                  <li>Learned the importance of validation for usability and accuracy</li>
+                  <li>Improved my ability to separate UI design from application logic</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: image/media -->
+          <div class="project-media">
+            <img src="../images/converter.png" alt="Screenshot of the project" />
+            <div class="media-caption">
+              JavaScript-powered unit conversion with real-time input handling.
+            </div>
+          </div>
+        </section>
+
+        <!-- Extra section for notes/ thoughts-->
+        <section class="project-section">
+          <div class="project-card">
+            <h3>Notes / Next Steps</h3>
+            <p class="muted">
+              Add optional improvements you’d do next (ex: more units, accessibility tweaks, refactor to modules, etc.).
+            </p>
+            <ul class="project-list">
+              <li>Add more conversion categories (temperature, volume, etc.)</li>
+              <li>Improve accessibility (labels, focus states, ARIA hints)</li>
+              <li>Refactor JS into modules as projects grow</li>
+            </ul>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <p>© 2026 Faith Brinton · Portfolio</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
